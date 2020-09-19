@@ -1,14 +1,48 @@
+<!DOCTYPE html>
 {% load static %}
-
-<!doctype html>
 <html lang="en">
-
 <head>
-    {% include 'main/partials/meta.html' %} {% block meta %} {% endblock %} {% include 'main/partials/styles.html' %} {% block styles %} {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %} ">
+  
+    {% block corecss%}
+    <link rel="stylesheet" href=" {% static 'main/css/blog.css' %} ">
+    {% endblock corecss%}
+
+    <title>DeltaX</title>
 </head>
-
 <body>
-    {% block body %} {% endblock %} {% include 'main/partials/footer.html' %} {% include 'main/partials/scripts.html' %} {% block scripts %} {% endblock %}
-</body>
+    <div class="container-fluid bg-dark">
+        {% include 'main/partials/navbar.html' %}
+    </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                {% block msg %}
+                {% endblock msg %}
+
+            </div>
+        </div>
+        <div class="row">
+
+            {% block side %}
+            {% endblock side %}
+
+            {% block content %}
+            {% endblock content %}
+
+        </div>
+        {% include 'main/partials/footer.html' %}
+    </div>
+
+    <script src="{% static 'main/js/jquery.js' %}"></script>
+    <script src="{% static 'main/js/popper.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    
+</body>
 </html>

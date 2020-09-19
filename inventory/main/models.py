@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from ckeditor.fields import RichTextField
+
 from django.db.models.signals import pre_save
 
 class Vendor(models.Model):
@@ -13,7 +13,7 @@ class Vendor(models.Model):
         return self.name
 
 
-class Company_manager(models.Model):
+class CompanyManager(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=120, unique=True)
     address = models.CharField(max_length=220)
@@ -32,7 +32,7 @@ class Product(models.Model):
         return self.name
 
 
-class Vendor_order(models.Model):
+class VendorOrder(models.Model):
     STATUS_CHOICE = (
         ('pending', 'Pending'),
         ('decline', 'Decline'),
@@ -43,13 +43,13 @@ class Vendor_order(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICE)
     created_date = models.DateField(auto_now_add=True)
 
-class Company_order(models.Model):
+class CompanyOrder(models.Model):
     STATUS_CHOICE = (
         ('delivered', 'Delivered'),
         ('pending', 'Pending'),
     )
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
-    company_manager = models.ForeignKey(Company_manager, on_delete=models.CASCADE, null=True)
+    company_manager = models.ForeignKey(CompanyManager, on_delete=models.CASCADE, null=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.CharField(max_length=120, unique=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICE)
