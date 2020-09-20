@@ -1,11 +1,13 @@
 {% load static %} {% block meta %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <title>Inventory</title>
+
+{% include 'main/partials/navbar.html' %}
+
 {% endblock %} {% block body %}
 
 <style>
-    .banner {
-        background-image: url("https://cdn.discordapp.com/attachments/755733221123031070/757087479160504370/Untitled_design.png");
+    .banner {background-image: url("https://cdn.discordapp.com/attachments/755733221123031070/757087479160504370/Untitled_design.png");
         background-position: 50% 0%;
         background-size: cover;
         color: hsl(210, 11%, 15%);
@@ -105,6 +107,8 @@
         padding: 5px 20px;
     }
     #phone_num.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.FeatName {
+
+
         background-color: hsla(0, 0%, 96%, 0.2);
         border-color: hsl(0, 0%, 64%);
         border-radius: 20px;
@@ -117,7 +121,7 @@
         margin: 4px 0px;
         padding: 5px 20px;
     }
-    #email.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.FeatName {
+    #entrol.wpcf7-text.wpcf7-validates-as-required.FeatName {
         background-color: hsla(0, 0%, 96%, 0.2);
         border-color: hsl(0, 0%, 64%);
         border-radius: 20px;
@@ -131,6 +135,7 @@
         padding: 5px 20px;
     }
     #city.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.FeatName {
+
         align-items: center;
         background-color: hsla(0, 0%, 96%, 0.2);
         border-color: hsl(0, 0%, 64%);
@@ -360,4 +365,5 @@
   </div>
 </div>
 {% include 'main/partials/footer.html' %}
+
 {% endblock %}
