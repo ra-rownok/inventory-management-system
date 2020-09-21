@@ -54,25 +54,15 @@
 
             <!-- Right -->
             <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item">
-                    <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a href="{% url 'logout' %}" class="nav-link border border-light rounded" target="_blank">
+                    <a href="{% url 'logout' %}" class="nav-link border border-light rounded">
                       Logout
                     </a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a href="{% url 'login' %}" class="nav-link border border-light rounded" target="_blank">
+                    <a href="{% url 'login' %}" class="nav-link border border-light rounded">
                     SignUp/SignIn
                   </a>
                 </li>

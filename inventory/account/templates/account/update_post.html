@@ -9,15 +9,17 @@
     <title>Profile Update - DeltaX</title>
 </head>
 <style>
-    .card {
-        box-sizing: content-box;
-        border: solid #c0c2cc 1px;
-        padding: 10px;
-        background-color: #b8dd89;
-    }
-    
     h3 {
         font-size: 40px;
+    }
+    
+    .center-column {
+        width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
     }
 </style>
 
@@ -26,65 +28,78 @@
     {% include 'main/partials/navbar.html' %}
     <br> <br> <br> <br>
 
-    <div class="card center-column text-center container" style="width: 70%;">
 
-        <div class=" text-center center-column">
-            <h3 class="text-center text-warning p-3">UPDATE PROFILE</h3>
 
-            <form action="" method="post" class="center-column align-content-center">
-                {% csrf_token %}
+    <div class=" container">
 
-                <div class="container ">
-                    <div class="row ">
-                        <div class="col-md-3">
-                            {% render_field form.gender class="form-control btn-sm" %}
-                        </div>
+        <div class=" text-center container center-column">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h5 class="text-center alert alert-primary" role="alert">UPDATE PROFILE</h5>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-8">
+                    <form action="" method="post">
+                        {% csrf_token %}
 
-                    </div> <br>
-                    <div class="row ">
-                        <div class="col-md-3 text-center">
-                            {% render_field form.profession class="form-control btn-sm" %}
-                        </div>
+                        <div class=" container ">
+                            <div class="row ">
+                                <div class="col-md-9 ">
+                                    {% render_field form.gender class="form-control btn-sm " %}
+                                </div>
 
-                    </div> <br>
-                    <div class="row ">
-                        <div class="col-md-3 text-center">
-                            {% render_field form.contact class="form-control btn-sm" placeholder="contact number" %}
-                        </div>
+                            </div> <br>
+                            <div class="row ">
+                                <div class="col-md-9 text-center ">
+                                    {% render_field form.profession class="form-control btn-sm " %}
+                                </div>
 
-                    </div><br>
-                    <div class="row ">
-                        <div class="col-md-3 text-center">
-                            {% render_field form.address class="form-control btn-sm" placeholder="address" %}
-                        </div>
+                            </div> <br>
+                            <div class="row ">
+                                <div class="col-md-9 text-center ">
+                                    {% render_field form.contact class="form-control btn-sm " placeholder="contact number " %}
+                                </div>
+
+                            </div><br>
+                            <div class="row ">
+                                <div class="col-md-9 text-center mb-4">
+                                    {% render_field form.address class="form-control btn-sm " placeholder="address " %}
+                                </div>
+
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-8 text-center mt-2">
+                                    <button type="submit " class="btn btn-info ml-5 align-content-center ">Submit</button>
+                                </div>
+
+                            </div>
+                    </form>
 
                     </div>
+                    <div class="col-md-1"></div>
 
-                    <button type="submit" class="btn btn-info">Submit</button>
-                    <!-- <a href="{% url 'home' %}" class="btn btn-info">Submit</a> -->
-
-            </form>
+                </div>
             </div>
 
         </div>
     </div>
 
 
-    <!-- <form action="" method="POST">
-        {% csrf_token %} {{form}}
-        <button type="submit" class="btn btn-success" value="Submit">Submit</button>
 
-    </form> -->
 
-    {% include 'main/partials/footer.html' %}
+    {% include 'main/partials/footer.html ' %}
 
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
 
 
 </body>
 
-</html>
+</html>;

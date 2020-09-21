@@ -8,9 +8,9 @@ class Profile(models.Model):
     ]
     
     GENDER = [
-        ('male', 'Male'),
-        ('female', 'Female'),
-        ('others', 'Others')
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+        ('Others', 'Others')
     ]
     user = models.OneToOneField(User, on_delete = models.CASCADE,null=False)
     profession = models.CharField(choices=PROFESSION, max_length=250, blank=True)
@@ -20,4 +20,4 @@ class Profile(models.Model):
 
 
     def __str__(self):
-        return self.contact
+        return self.user.username

@@ -1,1 +1,34 @@
- {% for orderlists in orderlist %} {{orderlists.status}} {% endfor %}
+ {{orderlists.status}} {% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> {% include 'main/partials/navbar.html' %}
+<br>
+<div class="container">
+    <div class="col-md-12">
+        <h3 class="text-dark my-5 text-center">Track Order</h3>
+
+        <h4 class="text-center alert alert-info my-3">See All Order Details</h4>
+        {% if orderlist %}
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col" style="width: 5%;">Order ID</th>
+                    <th scope="col" style="width: 26%;">Product Name</th>
+                    <th scope="col" style="width: 20%;">Quantity</th>
+                    <th scope="col" style="width: 20%;">Status</th>
+                    <th scope="col" style="width: 30%;">Date of Orders</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for orderlists in orderlist %}
+                <tr class="text-center">
+                    <th scope="row">{{orderlists.id}} </th>
+                    <td scope="row">{{orderlists.product.name}}</td>
+                    <td scope="row">{{orderlists.quantity}}</td>
+                    <td scope="row">{{orderlists.status}}</td>
+                    <td scope="row">{{orderlists.created_date}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</div>

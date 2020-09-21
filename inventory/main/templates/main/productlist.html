@@ -1,40 +1,66 @@
-<!-- {% for productlists in productlist %} {{productlists.name}} {% endfor %} -->
-<div class="col-sm-10">
-    <h3 class="text-dark my-5">Product List</h3>
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> {% include 'main/partials/navbar.html' %}
+<style>
+    .addbutton .btn {
+        width: 85%;
+        font-size: 18px;
+        font-weight: 500;
+    }
+</style>
+<br>
+<div class="container">
+    <div class="col-md-12">
+        <h3 class="text-dark my-5 text-center mr-1">Product List</h3>
 
-    <h4 class="text-center alert alert-info my-3">See All Products</h4>
-    {% if productlist %}
-    <table class="table">
-        <thead>
-            <tr class="text-center">
-                <th scope="col" style="width: 5%;">ID</th>
-                <th scope="col" style="width: 26%;">Name</th>
-                <th scope="col" style="width: 45%;">Price</th>
-                <th scope="col" style="width: 45%;">Vendor ID</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for productlists in productlist %}
-            <tr class="text-center">
-                <th scope="row">{{productlists.id}} </th>
-                <td scope="row">{{productlists.name}}</td>
-                <td scope="row">{{productlists.price}}</td>
-                <td scope="row">{{productlists.vendor.id}}</td>
-                <td class="text-center">
+        <h4 class="text-center alert alert-info my-3">See All Products</h4>
+        {% if productlist %}
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col" style="width: 5%;">ID</th>
+                    <th scope="col" style="width: 26%;">Name</th>
+                    <th scope="col" style="width: 20%;">Price</th>
+                    <th scope="col" style="width: 10%;">Vendor ID</th>
+                    <th scope="col" style="width: 25%;">Date of Publish</th>
+                    {% if user.profile.profession == 'Company Manager' %}
+                    <th scope="col" style="width: 25%;">Action</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for productlists in productlist %}
+                <tr class="text-center">
+                    <th scope="row">{{productlists.id}} </th>
+                    <td scope="row">{{productlists.name}}</td>
+                    <td scope="row">{{productlists.price}}</td>
+                    <td scope="row">{{productlists.vendor.id}}</td>
+                    <td scope="row">{{productlists.created_date}}</td>
 
-                    <form action="{% url 'order' productlists.id %}" method="post" class="d-inline">
-                        {% csrf_token %}
-                        <a href="{% url 'order' productlists.id %} " class="btn btn-warning btn-sm">Order</a>
-                        <!-- <input type="submit" value="Delete" class="btn btn-danger btn-sm"> -->
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-    <h4 class="text-center alert alert-warning">No Records</h4>
-    {% endif %}
+                    {% if user.profile.profession == 'Company Manager' %}
+                    <td class="text-center">
+                        <form action="{% url 'order' productlists.id %}" method="post" class="d-inline">
+                            {% csrf_token %}
+                            <a href="{% url 'order' productlists.id %} " class="btn btn-warning btn-sm">Order</a>
 
+                        </form>
+                    </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if user.profile.profession == 'Vendor' %}
+        <div class="container ml-4">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 addbutton"><a href="{% url 'product' %}" class="btn btn-info ">Add Product</a></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        {% endif %} {% else %}
+        <h4 class="text-center alert alert-warning">No Records</h4>
 
+    </div> {% endif %}
+
+</div>
 </div>

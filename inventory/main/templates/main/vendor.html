@@ -1,1 +1,36 @@
-{% for vendors in vendor %} {{vendors.id}} {{vendors.contact}} {{vendors.user.first_name}} {% endfor %}
+ {% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> {% include 'main/partials/navbar.html' %}
+<br>
+<div class="container">
+    <div class="col-md-12">
+        <h3 class="text-dark my-5 text-center">Vendors</h3>
+
+        <h4 class="text-center alert alert-info my-3">See All Vendors Details</h4>
+        {% if vendor %}
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col" style="width: 5%;">ID</th>
+                    <th scope="col" style="width: 20%;">First Name</th>
+                    <th scope="col" style="width: 20%;">Last Name</th>
+                    <th scope="col" style="width: 15%;">Contact</th>
+                    <th scope="col" style="width: 20%;">E-mail</th>
+                    <th scope="col" style="width: 30%;">Last Login</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vendors in vendor %}
+                <tr class="text-center">
+                    <th scope="row">{{vendors.id}} </th>
+                    <td scope="row">{{vendors.user.first_name}}</td>
+                    <td scope="row">{{vendors.user.last_name}}</td>
+                    <td scope="row">{{vendors.contact}}</td>
+                    <td scope="row">{{vendors.user.email}}</td>
+                    <td scope="row">{{vendors.user.last_login}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</div>

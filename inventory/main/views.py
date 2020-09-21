@@ -25,6 +25,7 @@ def product(request):
                                 price = form.cleaned_data['price']
                                 post = Product(name=name,quantity=quantity, price=price, vendor_id=request.user.id)
                                 post.save()
+                                return redirect ('/productlist/')
                 else:
                         form = ProductForm()
                         # product = Product.objects.all()
@@ -44,6 +45,7 @@ def order(request,pk):
                                 status = form.cleaned_data['status']
                                 post = CompanyOrder(quantity=quantity, status=status, company_manager_id=request.user.id, product_id=product.id)
                                 post.save()
+                                return redirect ('/orderlist/')
                 else:
                         form = OrderForm()
                 
@@ -62,13 +64,15 @@ def vendor(request):
 def product_list(request):
         productlist = Product.objects.all()
         context = {
-                'productlist': productlist,
+                'productlist': productlist
         }
         return render (request, 'main/productlist.html', context)
 
 def order_list(request):
+        product = Product.objects.all()
         orderlist = CompanyOrder.objects.all()
         context = {
                 'orderlist': orderlist,
+                'product': product
         }
         return render (request, 'main/orderlist.html', context)

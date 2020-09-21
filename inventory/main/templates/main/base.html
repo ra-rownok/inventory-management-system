@@ -1,45 +1,44 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
     <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %} ">
-  
-    {% block corecss%}
-    <link rel="stylesheet" href=" {% static 'main/css/main.css' %} ">
-    {% endblock corecss%}
 
     <title>DeltaX</title>
 </head>
+<style>
+
+</style>
+
 <body>
     <div class="container-fluid">
         {% include 'main/partials/navbar.html' %}
     </div>
 
-    
-            <div class="col-sm-12">
 
-                {% block msg %}
-                {% endblock msg %}
+    <div class="col-sm-12">
 
-            </div>
-            <div class="col-sm-12">
-            
+        {% block msg %} {% endblock msg %}
+
+    </div>
+    <div class="col-sm-12">
 
 
-            {% block content %}
-            {% endblock content %}
 
-        </div>
-        {% include 'main/partials/footer.html' %}
+        {% block content %} {% endblock content %}
+
+    </div>
+    {% include 'main/partials/footer.html' %}
     </div>
 
     <script src="{% static 'main/js/jquery.js' %}"></script>
     <script src="{% static 'main/js/popper.js' %}"></script>
     <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
-    
+
 </body>
+
 </html>

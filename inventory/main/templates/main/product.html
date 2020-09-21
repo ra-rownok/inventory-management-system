@@ -1,5 +1,111 @@
-<form action="" method="POST">
+<!-- <form action="" method="POST">
     {% csrf_token %} {{form}}
     <button type="submit" class="btn btn-success" value="Submit">Submit</button>
 
-</form>
+</form> -->
+
+{% load static %} {% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Add Product - DeltaX</title>
+</head>
+<style>
+    /* .card {
+        box-sizing: content-box;
+        border: solid #c0c2cc 1px;
+        padding: 10px;
+        background-color: #a4eff5;
+    }
+     */
+    
+    h3 {
+        font-size: 40px;
+    }
+    
+    .center-column {
+        width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<body>
+
+    {% include 'main/partials/navbar.html' %}
+    <br> <br> <br> <br>
+
+
+
+    <div class=" container">
+
+        <div class=" text-center container center-column">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h4 class="text-center alert alert-primary" role="alert">ADD PRODUCT</h4>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <form action="" method="post" class="   ">
+                {% csrf_token %}
+
+                <div class=" container ">
+                    <div class="row ">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 ">
+                            {% render_field form.name class="form-control btn-sm justify-content-center" placeholder="Product Name" %}
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div> <br>
+                    <div class="row ">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 text-center ">
+                            {% render_field form.quantity class="form-control btn-sm " placeholder="Quantity" %}
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div> <br>
+                    <div class="row ">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 text-center ">
+                            {% render_field form.price class="form-control btn-sm " placeholder="Price " %}
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <br>
+                    <button type="submit " class="btn btn-info  ">Submit</button>
+
+
+            </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- <form action=" " method="POST ">
+        {% csrf_token %} {{form}}
+        <button type="submit " class="btn btn-success " value="Submit ">Submit</button>
+
+    </form> -->
+
+    {% include 'main/partials/footer.html' %}
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+
+
+</body>
+
+</html>;

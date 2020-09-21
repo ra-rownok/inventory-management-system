@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=120, unique=True)
+    name = models.CharField(max_length=120)
     vendor = models.ForeignKey(User, on_delete=models.CASCADE)
     quantity = models.FloatField()
     price = models.FloatField()
@@ -17,8 +17,8 @@ class Product(models.Model):
 
 class CompanyOrder(models.Model):
     STATUS_CHOICE = (
-        ('delivered', 'Delivered'),
-        ('pending', 'Pending'),
+        ('Delivered', 'Delivered'),
+        ('Pending', 'Pending'),
     )
     company_manager = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
