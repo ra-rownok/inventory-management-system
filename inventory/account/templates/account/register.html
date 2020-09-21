@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +11,16 @@
     body {
         background-color: #3b4a68;
     }
-    .sign{
+    
+    .sign {
         color: #DADADA;
     }
-    
 </style>
 
 <body>
-    
+
     {% include 'main/partials/navbar.html' %}
-    
+
     <div class="container pt-5">
         <div class="row justify-content-center mt-5">
             <div class="col-lg-5 col-md-7 mt-5">
@@ -37,7 +37,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-user"></i></span>
                                         </div>
-                                        <input class="form-control" type="text" name="first_name" placeholder="First Name">
+                                        <input class="form-control" type="text" name="first_name" placeholder="First Name" required>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3 ml-2">
@@ -45,7 +45,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-user"></i></span>
                                         </div>
-                                        <input class="form-control" type="text" name="last_name" placeholder="Last Name">
+                                        <input class="form-control" type="text" name="last_name" placeholder="Last Name" required>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-user"></i></span>
                                     </div>
-                                    <input class="form-control" type="text" name="username" placeholder="Username">
+                                    <input class="form-control" type="text" name="username" placeholder="Username" required>
                                 </div>
                             </div>
                             <div class="form-group mb-3">
@@ -62,7 +62,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" type="email" name="email" placeholder="Email">
+                                    <input class="form-control" type="email" name="email" placeholder="Email" required>
                                 </div>
                             </div>
                             <div class="form-group mb-3">
@@ -70,7 +70,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" type="password" name="password1" placeholder="Password">
+                                    <input class="form-control" type="password" name="password1" placeholder="Password" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -78,7 +78,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" type="password" name="password2" placeholder="Re-type Password">
+                                    <input class="form-control" type="password" name="password2" placeholder="Re-type Password" required>
                                 </div>
                             </div>
                             <div class="text-center">
@@ -105,6 +105,7 @@
         </div>
     </div>
 
+    {% include 'main/partials/footer.html' %}
 
     <script>
         $(document).ready(function() {
@@ -115,7 +116,7 @@
                 var username = $("input[name='username']").val().trim();
                 var password1 = $("input[name='password1']").val().trim();
                 var password2 = $("input[name='password2']").val().trim();
-    
+
                 if (first_name == "") {
                     $("#ins_error").text("First Name can't be blank!");
                     $("#ins_error").show();
@@ -154,11 +155,11 @@
     </script>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-    
+
 </body>
-</html>
 
+</html>

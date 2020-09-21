@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User, auth
-from account.models import Profile
+from .models import Profile
+from .forms import ProfileForm
 
 def register(request):
     if request.method == "GET":
@@ -58,3 +59,17 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
+
+def update_profile (request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            profile = Profile.objects.get(user=request.user)
+            form = ProfileForm(request.POST, instance=profile)
+            if form.is_valid():
+                form.save()
+        else:
+            form = ProfileForm()
+        return render (request,'account/update_post.html', {'form': form})
+    else:
+        return redirect ('/login/')    
+                

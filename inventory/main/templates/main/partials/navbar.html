@@ -1,71 +1,91 @@
 <!-- Navbar -->
 <style>
-        @media (min-width: 800px) and (max-width: 850px) {
-            .navbar:not(.top-nav-collapse) {
-                background: #1C2331!important;
-            }
+    @media (min-width: 800px) and (max-width: 850px) {
+        .navbar:not(.top-nav-collapse) {
+            background: #1C2331!important;
         }
-.view,body,html{height:100%}.navbar{background-color:rgba(0,0,0,.2)}.page-footer,.top-nav-collapse{background-color:#1C2331}@media only screen and (max-width:768px){.navbar{background-color:#1C2331}}
-
+    }
+    
+    .view,
+    body,
+    html {
+        height: 100%
+    }
+    
+    .navbar {
+        background-color: rgba(0, 0, 0, .2)
+    }
+    
+    .page-footer,
+    .top-nav-collapse {
+        background-color: #1C2331
+    }
+    
+    @media only screen and (max-width:768px) {
+        .navbar {
+            background-color: #1C2331
+        }
+    }
 </style>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container-fluid">
 
-      <!-- Brand -->
-      <a class="navbar-brand" target="_blank">
-        <strong>DeltaX</strong>
-      </a>
+        <!-- Brand -->
+        <a class="navbar-brand" target="_blank">
+            <strong>DeltaX</strong>
+        </a>
 
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <!-- Left -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
-          </li>
-        </ul>
+                </li>
+            </ul>
 
-        <!-- Right -->
-        <ul class="navbar-nav nav-flex-icons">
-          <li class="nav-item">
-            <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'register' %}" class="nav-link border border-light rounded"
-              target="_blank">
-              <i class="fab fa-github mr-2"></i>Sign Up / Sign In
-            </a>
-          </li>
-        </ul>
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="{% url 'logout' %}" class="nav-link border border-light rounded" target="_blank">
+                      Logout
+                    </a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="{% url 'login' %}" class="nav-link border border-light rounded" target="_blank">
+                    SignUp/SignIn
+                  </a>
+                </li>
+                {% endif %}
+            </ul>
 
-      </div>
+        </div>
 
     </div>
-  </nav>
+</nav>
 
 <script>
-
-  class WOW {
-    }
+    class WOW {}
 
     new WOW().init();
-
 </script>
-    
-   

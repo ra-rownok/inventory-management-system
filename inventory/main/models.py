@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Product(models.Model):
     name = models.CharField(max_length=120, unique=True)
-    vendor = models.OneToOneField(User, on_delete=models.CASCADE)
+    vendor = models.ForeignKey(User, on_delete=models.CASCADE)
     quantity = models.FloatField()
     price = models.FloatField()
     created_date = models.DateField(auto_now_add=True)

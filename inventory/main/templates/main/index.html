@@ -2,12 +2,11 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <title>Inventory</title>
 
-{% include 'main/partials/navbar.html' %}
-
-{% endblock %} {% block body %}
+{% include 'main/partials/navbar.html' %} {% endblock %} {% block body %}
 
 <style>
-    .banner {background-image: url("https://cdn.discordapp.com/attachments/755733221123031070/757087479160504370/Untitled_design.png");
+    .banner {
+        background-image: url("https://cdn.discordapp.com/attachments/755733221123031070/757087479160504370/Untitled_design.png");
         background-position: 50% 0%;
         background-size: cover;
         color: hsl(210, 11%, 15%);
@@ -17,6 +16,7 @@
         padding: 30px 0px;
         text-align: left;
     }
+    
     h1 {
         color: hsl(0, 0%, 100%);
         font-size: 56px;
@@ -27,6 +27,7 @@
         padding: 60px 0px 20px;
         text-align: left;
     }
+    
     .banner-sub-title {
         color: hsl(0, 0%, 100%);
         font-size: 19.2px;
@@ -36,6 +37,7 @@
         padding: 30px 0px 0px;
         text-align: left;
     }
+    
     .col-md-12 {
         color: hsl(210, 11%, 15%);
         flex-basis: 100%;
@@ -44,6 +46,7 @@
         padding: 0px 15px;
         text-align: center;
     }
+    
     .col-lg-7 {
         color: hsl(210, 11%, 15%);
         flex-basis: 58.3333%;
@@ -52,21 +55,24 @@
         padding: 0px 15px;
         text-align: left;
     }
+    
     .clsLeftMargin {
         color: hsl(210, 11%, 15%);
         gap: normal;
         line-height: 24px;
         text-align: center;
     }
+    
     .FeatName {
-    width: 86%;
-    margin: 4px 0;
-    padding: 5px 20px;
-    border-radius: 20px;
-    background-color: #f5f5f533;
-    border: 1px solid #a2a2a2;
-    color: #dadada;
+        width: 86%;
+        margin: 4px 0;
+        padding: 5px 20px;
+        border-radius: 20px;
+        background-color: #f5f5f533;
+        border: 1px solid #a2a2a2;
+        color: #dadada;
     }
+    
     #userType.selectusertype.FeatName.wpcf7-validates-as-required {
         align-items: center;
         background-color: hsla(0, 0%, 96%, 0.2);
@@ -80,6 +86,7 @@
         margin: 4px 0px;
         padding: 5px 20px;
     }
+    
     #businessType.selectusertype.FeatName {
         align-items: center;
         background-color: hsla(0, 0%, 96%, 0.2);
@@ -93,6 +100,7 @@
         margin: 4px 0px;
         padding: 5px 20px;
     }
+    
     #name.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.FeatName {
         background-color: hsla(0, 0%, 96%, 0.2);
         border-color: hsl(0, 0%, 64%);
@@ -106,9 +114,8 @@
         margin: 4px 0px;
         padding: 5px 20px;
     }
+    
     #phone_num.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.FeatName {
-
-
         background-color: hsla(0, 0%, 96%, 0.2);
         border-color: hsl(0, 0%, 64%);
         border-radius: 20px;
@@ -121,6 +128,7 @@
         margin: 4px 0px;
         padding: 5px 20px;
     }
+    
     #entrol.wpcf7-text.wpcf7-validates-as-required.FeatName {
         background-color: hsla(0, 0%, 96%, 0.2);
         border-color: hsl(0, 0%, 64%);
@@ -134,8 +142,8 @@
         margin: 4px 0px;
         padding: 5px 20px;
     }
+    
     #city.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.FeatName {
-
         align-items: center;
         background-color: hsla(0, 0%, 96%, 0.2);
         border-color: hsl(0, 0%, 64%);
@@ -148,6 +156,7 @@
         margin: 4px 0px;
         padding: 5px 20px;
     }
+    
     a {
         display: inline;
         font-size: 14px;
@@ -155,6 +164,7 @@
         line-height: 21px;
         text-align: center;
     }
+    
     .submit-btn {
         color: hsl(210, 11%, 15%);
         gap: normal;
@@ -162,8 +172,30 @@
         padding: 16px 0px;
         text-align: center;
     }
-    #direct-sales.btn-yellow.content-btn {
-        margin: 0px 43.3281px;
+    /* .content-btn {
+        float: none;
+        max-width: 200px;
+        width: auto;
+    } */
+    /* .btn-yellow {
+        border-radius: 23px;
+        background-color: #ef7215;
+        color: #000000;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 15px;
+        text-align: center;
+        padding: 10px 30px;
+        min-height: 36px;
+        line-height: 1.5;
+        border: none;
+        white-space: unset;
+        cursor: pointer;
+        text-decoration: none!important;
+        float: left;
+    } */
+    
+    .btn-yellow.content-btn {
         background-color: hsl(26, 87%, 51%);
         border-radius: 23px;
         color: hsl(0, 0%, 20%);
@@ -171,9 +203,11 @@
         font-weight: 500;
         gap: normal;
         line-height: 21px;
-        padding: 10px 30px;
+        padding: 10px 100px;
         text-align: center;
+        float: none;
     }
+    
     img {
         color: hsl(211, 100%, 35%);
         display: inline;
@@ -181,6 +215,7 @@
         line-height: 24px;
         text-align: left;
     }
+    
     .nav-link {
         color: hsl(211, 100%, 35%);
         gap: normal;
@@ -188,27 +223,33 @@
         padding: 8px 16px;
         text-align: left;
     }
+    
     select option {
-        background: rgb(30, 30, 70);
+        background: rgb(44, 54, 99);
         padding: 10px;
     }
+    
     option {
         font-weight: normal;
         display: block;
         white-space: pre;
         min-height: 1.2em;
     }
-    ::placeholder {
+    
+     ::placeholder {
         color: white;
     }
+    
     .col-12.col-md-4.col-lg-4.text-center {
         color: hsl(210, 11%, 15%);
         flex-basis: 33.3333%;
         gap: normal;
         line-height: 24px;
-        padding: 0px 15px;
+        padding: 0px 10px;
         text-align: center;
+        margin-left: 10px;
     }
+    
     .features {
         border-width: 0px 0px 3px;
         box-shadow: hsl(227, 17%, 90%) 0px 0px 8px 2px;
@@ -218,6 +259,7 @@
         padding: 25px;
         text-align: center;
     }
+    
     .iconImg {
         color: hsl(210, 11%, 15%);
         display: inline;
@@ -225,6 +267,7 @@
         line-height: 24px;
         text-align: center;
     }
+    
     .paraText {
         color: hsl(210, 11%, 15%);
         gap: normal;
@@ -232,138 +275,101 @@
         margin: 32px 0px 16px;
         text-align: center;
     }
-
-
+    
+    .form-group {
+        width: 300px;
+        height: auto;
+        margin-left: 10px;
+    }
+    
+    .box {
+        border: 1px solid white;
+        box-sizing: border-box;
+    }
+    
+    button .update {
+        margin-left: 30px;
+    }
 </style>
 
 <div class="banner" data-selected="true" data-label-id="0" data-metatip="true">
     {% include 'main/partials/navbar.html' %} <br><br>
-    <div class="container mt-5" >
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-lg-7">
+            <div class="col-lg-7 mr-3">
                 <h1>Inventory Management</h1>
                 <p class="banner-sub-title">Your one-stop solution from accounting to inventory management. Inspired by the way you work, This is designed to delight you.</p>
             </div>
-            <div class="col-lg-5 free-trial-form">
-                <form id="buynow" method="post">
-                        <input type="hidden" id="strCampaignID" name="strCampaignID" value="1240">
-                        <input type="hidden" id="strCampaignID" name="strSourceID" value="61">
-                    <div class="registersubcontent">
-                        <div class="clsLeftMargin">
-                            <div class="col-md-12"><label for="userType"></label>
-                                <select id="userType" class="selectusertype FeatName wpcf7-validates-as-required" name="userType" required="required">
-                                <option value="">I am *</option>
-                                <option value="1">Company Manager</option>
-                                <option value="2">Vendor</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12"><label for="userType"></label>
-                                <select id="userType" class="selectusertype FeatName wpcf7-validates-as-required" name="userType" required="required">
-                                <option value="">Gender</option>
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
-                                <option value="3">Others</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12"><label for="phone_num"></label>
-                                <input id="phone_num" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required FeatName" autocomplete="off" name="phone_num" required="" type="tel" value="" placeholder=" Phone Number ">
-                            </div>
-                            <div class="col-md-12"><label for="email"></label>
-                                <input id="email" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required FeatName" autocomplete="off" name="email" required="" type="email" value="" placeholder=" Email Id ">
-                            </div>
-                            <div class="col-md-12"><label for="city"></label>
-                                <input id="city" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required FeatName" autocomplete="off" name="email" required="" type="email" value="" placeholder=" Address ">
-                            </div>
-                            <label for="youradress"></label>
-                            <input name="" placeholder="" type="text" class="contentmain" id="youradress" size="25" maxlength="40" style="display:none;">
-                            <div class="col-md-12" style="color: #ffffff; text-align: center;margin:5px 0 10px 0;font-size: 14px;">
-                                <label for="acceptTerms"></label><input name="terms" type="checkbox" id="acceptTerms"> I have read and accepted the <a style="color: #ffffff; text-decoration: underline;" target="_blank">T&amp;C </a>
-                            </div>
-                            <div class="col-md-8 offset-md-2">
-                                <div class="submit-btn">
-                                    <div id="direct-sales" onclick="function SaveForm() {
 
-                                    }
-                                    SaveForm();" class="btn-yellow content-btn" style="margin: 0 auto;">SUBMIT
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-lg-4   ml-4">
+
+
+                <div class="card bg-transparent border-radius box" style="width: 18rem;">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
+                        <h6 class="card-subtitle mb-3 ">{{request.user.profile.profession}}</h6>
+                        <h6 class="card-subtitle mb-3 ">{{request.user.profile.gender}}</h6>
+                        <h6 class="card-subtitle mb-3 ">{{request.user.profile.contact}}</h6>
+
+                        <button type="button" class="btn btn-outline-primary  update"><a href="{% url 'update' %}" class="text-white">Update</a></button>
+
                     </div>
-                </form>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-  <div class="row whatsnew blockPoints">
-     <div class="col-12 col-md-4 col-lg-4 text-center">
-     <div class="features">
-       <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/browser-support.jpg" alt="browser support"> <img src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/new.png" alt="new feature" class="new-icon">
-          <p class="paraText">Access business data, from a browser, on any device anywhere over a fully secure connection</p>
-     </div>
-     </div>
-     <div class="col-12 col-md-4 col-lg-4 text-center">
-     <div class="features">
-      <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/business-info.jpg" alt="business">
-          <p class="paraText">Get up-to-date business information in one click</p>
-     </div>
-     </div>
-     <div class="col-12 col-md-4 col-lg-4 text-center">
-     <div class="features">
-      <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/gst-invoice.jpg" alt="invoice">
-          <p class="paraText">Create and issue professional invoices</p>
-     </div>
-     </div>
-  </div>
+    <div class="row whatsnew blockPoints">
+
+        <div class=" col-md-4 col-lg-4 text-center">
+            <div class="features">
+                <a href="{% url 'product' %}"><img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/browser-support.jpg" alt="browser support"> </a>
+                <p class="paraText">Product List
+                </p>
+            </div>
+        </div>
+
+        <div class=" col-md-4 col-lg-4 text-center">
+            <div class="features">
+                <a href="{% url 'vendorlist' %}"><img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/business-info.jpg" alt="business"></a>
+                <p class="paraText">Get up-to-date business information in one click</p>
+            </div>
+        </div>
+
+        <div class=" col-md-4 col-lg-4 text-center">
+            <div class="features">
+                <a href="#"> <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/gst-invoice.jpg" alt="invoice"> </a>
+                <p class="paraText">View, track and reorder stock in a matter of seconds</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="container">
-  <div class="row ">
-     <div class="col-12 col-md-4 col-lg-4 text-center">
-     <div class="features">
-      <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/re-order-stock.jpg" alt="Re-order stock">
-          <p class="paraText">View, track and reorder stock in a matter of seconds</p>
-     </div>
-     </div>
-     <div class="col-12 col-md-4 col-lg-4 text-center">
-     <div class="features">
-      <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/business-decissions.jpg" alt="business decisions">
-          <p class="paraText">Make smarter business decisions with insightful reports</p>
-     </div>
-     </div>
-     <div class="col-12 col-md-4 col-lg-4 text-center">
-     <div class="features">
-      <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/multiple-companies.jpg" alt="multiple companies">
-          <p class="paraText">Manage multiple companies, branches and godowns</p>
-          </div>
-     </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="row ">
-     <div class="col-12 col-md-4 col-lg-4 text-center">
-     <div class="features">
-      <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/track-payments.jpg" alt="track overdue payments">
-          <p class="paraText">Quick track your outstanding and send reminder letters for overdue payments</p>
-     </div>
-     </div>
-     <div class="col-12 col-md-4 col-lg-4 text-center">
-     <div class="features">
-      <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/reconcile-bank-accounts.jpg" alt="Reconcile bank accounts">
-          <p class="paraText">Automatically reconcile bank statements with books of accounts</p>
-     </div>
-     </div>
-     <div class="col-12 col-md-4 col-lg-4 text-center">
-     <div class="features">
-      <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/financial-statement.png" alt="Generate financial statements">
-          <p class="paraText">Generate financial statements instantly</p>
-          </div>
-     </div>
-  </div>
-</div>
-{% include 'main/partials/footer.html' %}
 
-{% endblock %}
+<!-- <div class="container">
+    <div class="row ">
+        <div class="col-12 col-md-4 col-lg-4 text-center">
+            <div class="features">
+                <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/track-payments.jpg" alt="track overdue payments">
+                <p class="paraText">Quick track your outstanding and send reminder letters for overdue payments</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4 text-center">
+            <div class="features">
+                <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/reconcile-bank-accounts.jpg" alt="Reconcile bank accounts">
+                <p class="paraText">Automatically reconcile bank statements with books of accounts</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4 text-center">
+            <div class="features">
+                <img class="iconImg" src="https://resources.tallysolutions.com/bd/en/wp-content/uploads/free-trial/images/financial-statement.png" alt="Generate financial statements">
+                <p class="paraText">Generate financial statements instantly</p>
+            </div>
+        </div>
+    </div>
+</div> -->
+{% include 'main/partials/footer.html' %} {% endblock %}

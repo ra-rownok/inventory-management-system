@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,19 @@
     <title>login - DeltaX</title>
 </head>
 <style type="text/css">
-    body { 
+    body {
         background-color: #3b4a68;
     }
-    .sign{
+    
+    .sign {
         color: #DADADA;
     }
 </style>
+
 <body>
     {% include 'main/partials/navbar.html' %}
-   
-    
+
+
     <div class="container pt-7 mt-5">
         <div class="row justify-content-center mt-5">
             <div class="col-lg-5 col-md-7 mt-5">
@@ -33,7 +36,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-user"></i></span>
                                     </div>
-                                    <input class="form-control" type="text" name="username" placeholder="Username">
+                                    <input class="form-control" type="text" name="username" placeholder="Username" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -41,7 +44,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" type="password" name="password" placeholder="Password">
+                                    <input class="form-control" type="password" name="password" placeholder="Password" required>
                                 </div>
                             </div>
                             <div class="text-center">
@@ -67,13 +70,13 @@
             </div>
         </div>
     </div>
-
+    {% include 'main/partials/footer.html' %}
     <script>
         $(document).ready(function() {
             $(document).on("click", ".login", function(e) {
                 var username = $("input[name='username']").val().trim();
                 var password = $("input[name='password']").val().trim();
-    
+
                 if (username == "") {
                     $("#ins_error").text("Username can't be blank!");
                     $("#ins_error").show();
@@ -94,7 +97,8 @@
             });
         });
     </script>
-    
-    
+
+
 </body>
+
 </html>
