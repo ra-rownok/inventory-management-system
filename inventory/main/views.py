@@ -27,8 +27,8 @@ def product(request):
                                 post.save()
                 else:
                         form = ProductForm()
-                        product = Product.objects.all()
-                        return render(request, 'main/Product.html', {'form': form},{'product': product})
+                        # product = Product.objects.all()
+                return render(request, 'main/Product.html', {'form': form})
         else:
                 return redirect('/login/')  
         
@@ -46,14 +46,29 @@ def order(request,pk):
                                 post.save()
                 else:
                         form = OrderForm()
+                
                 return render(request, 'main/order.html', {'form': form})
         else:
                 return redirect('/login/')
 
 
 def vendor(request):
-        vendor = Profile.objects.all()
+        vendor = Profile.objects.filter(profession__contains  = 'Vendor')
         context = {
                 'vendor': vendor
         }
         return render (request, 'main/vendor.html', context)
+
+def product_list(request):
+        productlist = Product.objects.all()
+        context = {
+                'productlist': productlist,
+        }
+        return render (request, 'main/productlist.html', context)
+
+def order_list(request):
+        orderlist = CompanyOrder.objects.all()
+        context = {
+                'orderlist': orderlist,
+        }
+        return render (request, 'main/orderlist.html', context)

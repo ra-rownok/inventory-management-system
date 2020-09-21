@@ -13,5 +13,6 @@ urlpatterns = [
     path('product/',main_views.product,name='product'),
     path('order/<int:pk>/',main_views.order,name='order'),
     path('vendor/',main_views.vendor,name='vendorlist'),
-    # path('orderlist/',main_views.order_list,name='orderlist'),
+    path('productlist/',main_views.product_list,name='productlist'),
+    path('orderlist/',main_views.order_list,name='orderlist'),
 ]

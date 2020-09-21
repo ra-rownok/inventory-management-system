@@ -1,0 +1,40 @@
+<!-- {% for productlists in productlist %} {{productlists.name}} {% endfor %} -->
+<div class="col-sm-10">
+    <h3 class="text-dark my-5">Product List</h3>
+
+    <h4 class="text-center alert alert-info my-3">See All Products</h4>
+    {% if productlist %}
+    <table class="table">
+        <thead>
+            <tr class="text-center">
+                <th scope="col" style="width: 5%;">ID</th>
+                <th scope="col" style="width: 26%;">Name</th>
+                <th scope="col" style="width: 45%;">Price</th>
+                <th scope="col" style="width: 45%;">Vendor ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for productlists in productlist %}
+            <tr class="text-center">
+                <th scope="row">{{productlists.id}} </th>
+                <td scope="row">{{productlists.name}}</td>
+                <td scope="row">{{productlists.price}}</td>
+                <td scope="row">{{productlists.vendor.id}}</td>
+                <td class="text-center">
+
+                    <form action="{% url 'order' productlists.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <a href="{% url 'order' productlists.id %} " class="btn btn-warning btn-sm">Order</a>
+                        <!-- <input type="submit" value="Delete" class="btn btn-danger btn-sm"> -->
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h4 class="text-center alert alert-warning">No Records</h4>
+    {% endif %}
+
+
+</div>

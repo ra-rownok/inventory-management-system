@@ -1,1 +1,1 @@
-{% if request.user.profile.profession == 'Vendor' %} {% for vendors in vendor %} {{user.id}} {{user.first_name}} {% endfor %} {% endif %}
+{% for vendors in vendor %} {{vendors.id}} {{vendors.contact}} {{vendors.user.first_name}} {% endfor %}
